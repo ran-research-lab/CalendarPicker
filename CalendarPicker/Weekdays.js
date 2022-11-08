@@ -16,13 +16,14 @@ export default function Weekdays(props) {
     textStyle,
     dayLabelsWrapper,
     customDayHeaderStyles,
+    language
   } = props;
 
   // dayOfWeekNums: ISO week day numbers
   const dayOfWeekNums = Utils.getISOWeekdaysOrder(firstDay);
   let wd = weekdays;
   if (!wd) {
-    wd = firstDay ? Utils.getWeekdays(firstDay) : Utils.WEEKDAYS; // English Week days Array
+    wd = firstDay ? Utils.getWeekdays(firstDay) : Utils.WEEKDAYS[language]; // English Week days Array
   }
 
   return (

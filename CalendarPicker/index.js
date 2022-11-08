@@ -15,6 +15,7 @@ export default class CalendarPicker extends Component {
     super(props);
     this.numMonthsScroll = 60; // 5 years
     this.state = {
+      language: 'es',
       currentMonth: null,
       currentYear: null,
       currentView: 'days',
@@ -564,6 +565,7 @@ export default class CalendarPicker extends Component {
             textStyle={textStyle}
             dayLabelsWrapper={dayLabelsWrapper}
             customDayHeaderStyles={customDayHeaderStyles}
+            language={this.state.language}
           />
           { scrollable ?
             <Scroller

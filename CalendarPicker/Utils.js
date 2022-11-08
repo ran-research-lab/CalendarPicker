@@ -8,7 +8,7 @@
 export const Utils = {
   START_DATE: 'START_DATE',
   END_DATE: 'END_DATE',
-  WEEKDAYS: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+  WEEKDAYS: {'en': ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], 'es': ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab']},
   MONTHS: [
     'January', 'February', 'March', 'April', 'May', 'June', 'July',
     'August', 'September', 'October', 'November', 'December'
@@ -49,21 +49,21 @@ export const Utils = {
     }
     return !!a && !!b && a.isSame(b, granularity);
   },
-  getWeekdays: function(firstDay = 0) {
+  getWeekdays: function(firstDay = 0, language = 'en') {
     let from = firstDay;
     const weekdays = [];
-    for (let i = 0; i < Utils.WEEKDAYS.length; i++) {
-      weekdays.push(Utils.WEEKDAYS[from]);
-      from = from >= Utils.WEEKDAYS.length - 1 ? 0 : from + 1;
+    for (let i = 0; i < Utils.WEEKDAYS[language].length; i++) {
+      weekdays.push(Utils.WEEKDAYS[language][from]);
+      from = from >= Utils.WEEKDAYS[language].length - 1 ? 0 : from + 1;
     }
     return weekdays;
   },
-  getISOWeekdaysOrder: function(firstDay = 0) {
+  getISOWeekdaysOrder: function(firstDay = 0, language = 'en') {
     let from = firstDay === 0 ? 7 : firstDay;
     const order = [];
-    for (let i = 0; i < Utils.WEEKDAYS.length; i++) {
+    for (let i = 0; i < Utils.WEEKDAYS[language].length; i++) {
       order.push(from);
-      from = from >= Utils.WEEKDAYS.length ? 1 : from + 1;
+      from = from >= Utils.WEEKDAYS[language].length ? 1 : from + 1;
     }
     return order;
   },
