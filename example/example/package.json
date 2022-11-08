@@ -14,17 +14,17 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "expo": "~36.0.0",
-    "react": "~16.9.0",
-    "react-dom": "~16.9.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
-    "react-native-calendar-picker": "file:../",
-    "react-native-web": "~0.11.7",
+    "expo": "^46.0.0",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-native": "0.69.6",
+ "react-native-calendar-picker": "file:../../CalendarPicker",
+    "react-native-web": "~0.18.7",
     "recyclerlistview": "^3.0.0"
   },
   "devDependencies": {
     "@deboxsoft/cpx": "^1.5.0",
-    "jest": "^25.1.0",
+    "jest": "^26.6.3",
     "moment": "*",
     "react-test-renderer": "~16.12.0"
   },
